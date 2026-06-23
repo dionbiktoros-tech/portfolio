@@ -20,14 +20,12 @@
             color: #4a2c5a;
         }
 
-        /* ========== КОНТЕЙНЕР ========== */
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 30px 20px;
         }
 
-        /* ========== ШАПКА ========== */
         header {
             background: linear-gradient(135deg, #d81b60, #e91e63, #ec407a);
             padding: 40px 30px;
@@ -76,7 +74,6 @@
             letter-spacing: 4px;
         }
 
-        /* ========== КНОПКИ ========== */
         .btn {
             display: inline-block;
             padding: 12px 32px;
@@ -143,7 +140,6 @@
             flex-wrap: wrap;
         }
 
-        /* ========== КАРТОЧКИ ========== */
         .card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -173,7 +169,6 @@
             font-size: 28px;
         }
 
-        /* ========== ОБО МНЕ ========== */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -209,7 +204,6 @@
             margin-top: 4px;
         }
 
-        /* ========== ИНТЕРЕСЫ ========== */
         .interests-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -236,7 +230,6 @@
             margin-bottom: 6px;
         }
 
-        /* ========== СКАЧИВАНИЕ ========== */
         .download-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -279,7 +272,6 @@
             padding: 10px 24px;
         }
 
-        /* ========== КОНТАКТЫ ========== */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -317,7 +309,6 @@
             font-size: 15px;
         }
 
-        /* ========== ФУТЕР ========== */
         footer {
             text-align: center;
             padding: 30px 0 10px;
@@ -329,7 +320,6 @@
             color: #d81b60;
         }
 
-        /* ========== АНИМАЦИИ ========== */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -345,33 +335,23 @@
             animation: fadeInUp 0.6s ease-out;
         }
 
-        .card:nth-child(2) { animation-delay: 0.1s; }
-        .card:nth-child(3) { animation-delay: 0.2s; }
-        .card:nth-child(4) { animation-delay: 0.3s; }
-
-        /* ========== АДАПТИВ ========== */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 28px;
             }
-
             .about-grid {
                 grid-template-columns: 1fr;
             }
-
             .download-grid {
                 grid-template-columns: 1fr;
             }
-
             .contact-grid {
                 grid-template-columns: 1fr 1fr;
             }
-
             .header-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-
             .header-buttons .btn {
                 width: 100%;
                 max-width: 300px;
@@ -382,36 +362,15 @@
             .contact-grid {
                 grid-template-columns: 1fr;
             }
-
             .interests-grid {
                 grid-template-columns: 1fr 1fr;
             }
-
             .container {
                 padding: 15px 10px;
             }
-
             header {
                 padding: 25px 15px;
             }
-        }
-
-        /* СКРОЛЛБАР */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #fce4ec;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #d81b60, #e91e63);
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #c2185b;
         }
     </style>
 </head>
@@ -419,12 +378,10 @@
 
     <div class="container">
 
-        <!-- ===== ШАПКА ===== -->
         <header>
             <div class="avatar">👨‍💻</div>
             <h1>Иванов Аркадий</h1>
             <div class="subtitle">Студент-программист</div>
-
             <div class="header-buttons">
                 <a href="#about" class="btn btn-secondary">📄 Обо мне</a>
                 <a href="#downloads" class="btn btn-secondary">📦 Мои приложения</a>
@@ -432,21 +389,17 @@
             </div>
         </header>
 
-        <!-- ===== ОБО МНЕ ===== -->
         <div class="card" id="about">
             <h2><span class="icon">👋</span> Привет! Я Аркадий</h2>
-
-            <p style="color: #7b4f8c; font-size: 16px; line-height: 1.7; margin-bottom: 20px;">
+            <p style="color: #4a2c5a; font-size: 16px; line-height: 1.7; margin-bottom: 20px;">
                 Меня зовут <strong>Иванов Аркадий</strong>, я студент группы <strong>Гр-ИС-944</strong>.
                 Учусь на программиста и постепенно превращаю свои идеи в рабочие приложения.
             </p>
-
-            <p style="color: #7b4f8c; font-size: 16px; line-height: 1.7; margin-bottom: 25px;">
+            <p style="color: #4a2c5a; font-size: 16px; line-height: 1.7; margin-bottom: 25px;">
                 Сейчас я на старте своего пути в IT, но уже успел понять главное:
                 <strong>программирование — это не просто код, а способ решать реальные задачи</strong>.
                 Мне нравится создавать что-то полезное — будь то мобильное приложение или десктопная программа.
             </p>
-
             <div class="about-grid">
                 <div class="about-item">
                     <span class="emoji">🎓</span>
@@ -471,78 +424,48 @@
             </div>
         </div>
 
-        <!-- ===== ИНТЕРЕСЫ ===== -->
         <div class="card">
             <h2><span class="icon">💡</span> Мои интересы в программировании</h2>
-
             <div class="interests-grid">
-                <div class="interest-item">
-                    <span class="emoji">📱</span>
-                    Мобильные приложения
-                </div>
-                <div class="interest-item">
-                    <span class="emoji">💻</span>
-                    Десктопное ПО (EXE)
-                </div>
-                <div class="interest-item">
-                    <span class="emoji">🎨</span>
-                    Красивые интерфейсы
-                </div>
-                <div class="interest-item">
-                    <span class="emoji">⚡</span>
-                    Автоматизация задач
-                </div>
-                <div class="interest-item">
-                    <span class="emoji">🤖</span>
-                    Telegram-боты
-                </div>
-                <div class="interest-item">
-                    <span class="emoji">🗄️</span>
-                    Базы данных
-                </div>
+                <div class="interest-item"><span class="emoji">📱</span>Мобильные приложения</div>
+                <div class="interest-item"><span class="emoji">💻</span>Десктопное ПО (EXE)</div>
+                <div class="interest-item"><span class="emoji">🎨</span>Красивые интерфейсы</div>
+                <div class="interest-item"><span class="emoji">⚡</span>Автоматизация задач</div>
+                <div class="interest-item"><span class="emoji">🤖</span>Telegram-боты</div>
+                <div class="interest-item"><span class="emoji">🗄️</span>Базы данных</div>
             </div>
         </div>
 
-        <!-- ===== СКАЧИВАНИЕ ===== -->
         <div class="card" id="downloads">
             <h2><span class="icon">📦</span> Мои приложения</h2>
-
             <div class="download-grid">
-                <!-- Десктопное приложение -->
-                <div class="download-item">
-                    <span class="icon">🖥️</span>
-                    <h3>Beauty Store Desktop</h3>
-                    <p>Десктопное приложение для управления магазином косметики</p>
-                    <a href="#" class="btn btn-primary">⬇️ Скачать EXE</a>
-                </div>
-
-                <!-- Мобильное приложение -->
                 <div class="download-item">
                     <span class="icon">📱</span>
                     <h3>Beauty Store Mobile</h3>
-                    <p>Мобильное приложение для покупки косметики (Android)</p>
-                    <a href="#" class="btn btn-purple">⬇️ Скачать APK</a>
+                    <p>Мобильное приложение для Android</p>
+                    <a href="https://raw.githubusercontent.com/dionbiktoros-tech/portfolio/main/app-debug.apk" class="btn btn-purple" download>⬇️ Скачать APK</a>
                 </div>
-
-                <!-- Портативная версия -->
                 <div class="download-item">
                     <span class="icon">📦</span>
                     <h3>Портативная версия</h3>
-                    <p>ZIP архив с исходным кодом для всех ОС</p>
-                    <a href="#" class="btn btn-success">⬇️ Скачать ZIP</a>
+                    <p>ZIP архив с исходным кодом</p>
+                    <a href="https://raw.githubusercontent.com/dionbiktoros-tech/portfolio/main/beauty_store_portable.zip" class="btn btn-success" download>⬇️ Скачать ZIP</a>
+                </div>
+                <div class="download-item">
+                    <span class="icon">🖥️</span>
+                    <h3>Beauty Store Desktop</h3>
+                    <p>Десктопное приложение для Windows</p>
+                    <a href="https://raw.githubusercontent.com/dionbiktoros-tech/portfolio/main/beauty_store_desktop.exe" class="btn btn-primary" download>⬇️ Скачать EXE</a>
                 </div>
             </div>
         </div>
 
-        <!-- ===== КОНТАКТЫ ===== -->
         <div class="card" id="contacts">
             <h2><span class="icon">📬</span> Связь со мной</h2>
-
-            <p style="color: #7b4f8c; font-size: 16px; line-height: 1.7; margin-bottom: 20px;">
+            <p style="color: #4a2c5a; font-size: 16px; line-height: 1.7; margin-bottom: 20px;">
                 Я открыт к общению, советам и сотрудничеству.
                 Если вам интересны мои проекты или есть идея — пишите!
             </p>
-
             <div class="contact-grid">
                 <div class="contact-item">
                     <span class="emoji">📞</span>
@@ -567,7 +490,6 @@
             </div>
         </div>
 
-        <!-- ===== ФУТЕР ===== -->
         <footer>
             <p>© 2024 Иванов Аркадий · Сделано с <span class="heart">❤</span> в Кемерово</p>
             <p style="font-size: 12px; margin-top: 5px; opacity: 0.7;">Студент группы Гр-ИС-944</p>
