@@ -2,54 +2,38 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио Иванова Аркадия</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
-            background: #fce4ec;
-            color: #4a2c5a;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+            min-height: 100vh;
             padding: 20px;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
             background: white;
-            padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(216, 27, 96, 0.1);
+            padding: 40px;
+            box-shadow: 0 8px 40px rgba(216,27,96,0.15);
         }
         h1 {
             color: #d81b60;
             text-align: center;
+            font-size: 32px;
         }
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            margin: 10px 5px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-purple {
-            background: #6a1b9a;
-        }
-        .btn-purple:hover {
-            background: #7b1fa2;
-        }
-        .btn-success {
-            background: #2E7D32;
-        }
-        .btn-success:hover {
-            background: #1B5E20;
-        }
-        .btn-primary {
-            background: #d81b60;
-        }
-        .btn-primary:hover {
-            background: #c2185b;
+        .subtitle {
+            text-align: center;
+            color: #7b4f8c;
+            font-size: 18px;
+            margin-bottom: 30px;
         }
         .download-item {
             background: #fce4ec;
@@ -57,10 +41,74 @@
             margin: 15px 0;
             border-radius: 15px;
             text-align: center;
+            transition: 0.3s;
         }
-        .icon {
+        .download-item:hover {
+            background: #f8bbd0;
+            transform: translateY(-3px);
+        }
+        .download-item .icon {
             font-size: 40px;
         }
+        .download-item h3 {
+            color: #4a2c5a;
+            margin: 10px 0 5px;
+        }
+        .download-item p {
+            color: #7b4f8c;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+        .btn-purple { background: #6a1b9a; }
+        .btn-success { background: #2E7D32; }
+        .btn-primary { background: #d81b60; }
+        .btn-secondary { background: #7b4f8c; }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .contact-item {
+            background: #fce4ec;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .contact-item .emoji { font-size: 24px; }
+        .contact-item .label { color: #7b4f8c; font-size: 12px; }
+        .contact-item .value { color: #4a2c5a; font-weight: 600; }
+        hr {
+            border: none;
+            border-top: 2px solid #fce4ec;
+            margin: 25px 0;
+        }
+        .version {
+            text-align: center;
+            color: #999;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0 5px;
+            color: #7b4f8c;
+            font-size: 14px;
+        }
+        .heart { color: #d81b60; }
     </style>
 </head>
 <body>
@@ -68,17 +116,21 @@
     <div class="container">
 
         <h1>👨‍💻 Иванов Аркадий</h1>
-        <p style="text-align: center; color: #7b4f8c;">Студент группы Гр-ИС-944</p>
+        <p class="subtitle">Студент группы Гр-ИС-944</p>
+
         <hr>
 
-        <h2>📦 Мои приложения</h2>
+        <h2 style="color: #4a2c5a; text-align: center;">📦 Мои приложения</h2>
 
         <!-- APK -->
         <div class="download-item">
             <div class="icon">📱</div>
             <h3>Beauty Store Mobile</h3>
             <p>Мобильное приложение для Android</p>
-            <a href="https://github.com/dionbiktoros-tech/portfolio/raw/main/app-debug.apk" class="btn btn-purple" download>⬇️ Скачать APK</a>
+            <a href="https://github.com/dionbiktoros-tech/portfolio/raw/main/app-debug.apk" class="btn btn-purple" download>
+                ⬇️ Скачать APK
+            </a>
+            <div class="version">Версия 1.0.1</div>
         </div>
 
         <!-- ZIP -->
@@ -86,7 +138,10 @@
             <div class="icon">📦</div>
             <h3>Портативная версия</h3>
             <p>ZIP архив с исходным кодом</p>
-            <a href="https://github.com/dionbiktoros-tech/portfolio/raw/main/beauty_store_portable.zip" class="btn btn-success" download>⬇️ Скачать ZIP</a>
+            <a href="https://github.com/dionbiktoros-tech/portfolio/raw/main/beauty_store_portable.zip" class="btn btn-success" download>
+                ⬇️ Скачать ZIP
+            </a>
+            <div class="version">Версия 1.0.1</div>
         </div>
 
         <!-- EXE -->
@@ -94,19 +149,45 @@
             <div class="icon">🖥️</div>
             <h3>Beauty Store Desktop</h3>
             <p>Десктопное приложение для Windows</p>
-            <a href="https://github.com/dionbiktoros-tech/portfolio/raw/main/beauty_store_desktop.exe" class="btn btn-primary" download>⬇️ Скачать EXE</a>
+            <a href="https://github.com/dionbiktoros-tech/portfolio/releases/download/v1.0.0/beauty_store_desktop.exe" class="btn btn-primary" download>
+                ⬇️ Скачать EXE
+            </a>
+            <div class="version">Версия 1.0.1</div>
         </div>
 
         <hr>
 
-        <h2>📬 Контакты</h2>
-        <p>📞 8-913-283-19-15</p>
-        <p>📍 г. Кемерово, ул. Терешковой, 35</p>
-        <p>📧 arkady@beautygarden.com</p>
-        <p>💬 @arkady_dev</p>
+        <h2 style="color: #4a2c5a; text-align: center;">📬 Связь со мной</h2>
+
+        <div class="contact-grid">
+            <div class="contact-item">
+                <div class="emoji">📞</div>
+                <div class="label">Телефон</div>
+                <div class="value">8-913-283-19-15</div>
+            </div>
+            <div class="contact-item">
+                <div class="emoji">📍</div>
+                <div class="label">Адрес</div>
+                <div class="value">г. Кемерово, ул. Терешковой, 35</div>
+            </div>
+            <div class="contact-item">
+                <div class="emoji">📧</div>
+                <div class="label">Email</div>
+                <div class="value">arkady@beautygarden.com</div>
+            </div>
+            <div class="contact-item">
+                <div class="emoji">💬</div>
+                <div class="label">Telegram</div>
+                <div class="value">@arkady_dev</div>
+            </div>
+        </div>
 
         <hr>
-        <p style="text-align: center; color: #999;">© 2024 Иванов Аркадий</p>
+
+        <footer>
+            <p>© 2024 Иванов Аркадий · Сделано с <span class="heart">❤</span> в Кемерово</p>
+            <p style="font-size: 12px; opacity: 0.7;">Студент группы Гр-ИС-944</p>
+        </footer>
 
     </div>
 
