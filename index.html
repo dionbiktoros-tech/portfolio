@@ -17,7 +17,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
@@ -37,21 +37,24 @@
         }
         .download-item {
             background: #fce4ec;
-            padding: 20px;
-            margin: 15px 0;
+            padding: 25px;
+            margin: 20px 0;
             border-radius: 15px;
             text-align: center;
             transition: 0.3s;
+            border: 2px solid transparent;
         }
         .download-item:hover {
             background: #f8bbd0;
             transform: translateY(-3px);
+            border-color: #d81b60;
         }
         .download-item .icon {
-            font-size: 40px;
+            font-size: 48px;
         }
         .download-item h3 {
             color: #4a2c5a;
+            font-size: 22px;
             margin: 10px 0 5px;
         }
         .download-item p {
@@ -78,6 +81,7 @@
         .btn-primary { background: #d81b60; }
         .btn-secondary { background: #7b4f8c; }
         .btn-info { background: #0d47a1; }
+        .btn-warning { background: #e65100; }
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -99,13 +103,10 @@
             margin: 25px 0;
         }
         .version {
-            text-align: center;
             color: #999;
             font-size: 13px;
-            margin-top: 10px;
         }
         .size {
-            text-align: center;
             color: #aaa;
             font-size: 12px;
             margin-top: 4px;
@@ -121,25 +122,33 @@
             display: inline-block;
             background: #4CAF50;
             color: white;
-            padding: 2px 12px;
+            padding: 2px 14px;
             border-radius: 12px;
             font-size: 12px;
             margin-bottom: 8px;
         }
-        .release-notes {
+        .instruction {
             background: #f5f5f5;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 20px 0;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            text-align: left;
             font-size: 14px;
             line-height: 1.8;
         }
-        .release-notes h3 {
-            color: #d81b60;
-            margin-bottom: 10px;
-        }
-        .release-notes ul {
+        .instruction ol {
             padding-left: 20px;
+        }
+        .instruction li {
+            margin-bottom: 5px;
+        }
+        .release-info {
+            background: #e3f2fd;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #0d47a1;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -154,42 +163,68 @@
 
         <h2 style="color: #4a2c5a; text-align: center;">📦 Мои приложения</h2>
 
-        <!-- EXE + БД (релиз v1.0.0) -->
+        <!-- ===== ДЕСКТОП ===== -->
         <div class="download-item">
             <div class="icon">🖥️</div>
             <h3>Beauty Store Desktop</h3>
             <p>Десктопное приложение для Windows</p>
             <div class="badge">⭐ Версия 1.0.0</div>
-            <a href="https://github.com/dionbiktoros-tech/portfolio/releases/download/v1.0.0/BeautyGarden.exe" class="btn btn-primary" download>
-                ⬇️ Скачать EXE
-            </a>
-            <a href="https://github.com/dionbiktoros-tech/portfolio/releases/download/v1.0.0/beauty_shop.db" class="btn btn-secondary" download>
-                ⬇️ Скачать БД
-            </a>
+
+            <div>
+                <a href="https://github.com/dionbiktoros-tech/portfolio/releases/download/v1.0.0/BeautyGarden.exe" class="btn btn-primary" download>
+                    ⬇️ Скачать EXE
+                </a>
+                <a href="https://github.com/dionbiktoros-tech/portfolio/releases/download/v1.0.0/beauty_shop.db" class="btn btn-secondary" download>
+                    ⬇️ Скачать БД
+                </a>
+            </div>
+
             <div class="size">EXE: 37.9 MB | БД: 28 KB</div>
+
+            <div class="instruction">
+                <strong>📖 Инструкция по установке:</strong>
+                <ol>
+                    <li>Скачайте оба файла: <strong>EXE</strong> и <strong>БД</strong></li>
+                    <li>Положите их в <strong>одну папку</strong></li>
+                    <li>Запустите <strong>BeautyGarden.exe</strong></li>
+                    <li>Выберите сотрудника и войдите в систему</li>
+                </ol>
+            </div>
+
+            <div class="release-info">
+                📦 Релиз: v1.0.0 · <a href="https://github.com/dionbiktoros-tech/portfolio/releases/tag/v1.0.0" target="_blank" style="color: #0d47a1;">Перейти в релиз</a>
+            </div>
         </div>
 
-        <!-- APK (релиз v1.0.3) -->
+        <!-- ===== МОБИЛЬНОЕ ===== -->
         <div class="download-item">
             <div class="icon">📱</div>
             <h3>Beauty Store Mobile</h3>
             <p>Мобильное приложение для Android</p>
             <div class="badge">⭐ Версия 1.0.0</div>
-            <a href="https://github.com/dionbiktoros-tech/portfolio/releases/download/v1.0.3/app-debug.apk" class="btn btn-purple" download>
-                ⬇️ Скачать APK
-            </a>
+
+            <div>
+                <a href="https://github.com/dionbiktoros-tech/portfolio/releases/download/v1.0.3/app-debug.apk" class="btn btn-purple" download>
+                    ⬇️ Скачать APK
+                </a>
+            </div>
+
             <div class="size">Размер: 5.7 MB</div>
-        </div>
 
-        <hr>
+            <div class="instruction">
+                <strong>📖 Инструкция по установке:</strong>
+                <ol>
+                    <li>Скачайте <strong>APK</strong> файл на телефон</li>
+                    <li>Откройте файл через файловый менеджер</li>
+                    <li>Разрешите установку из <strong>неизвестных источников</strong></li>
+                    <li>Нажмите <strong>"Установить"</strong></li>
+                    <li>Готово! Открывайте и пользуйтесь 🌸</li>
+                </ol>
+            </div>
 
-        <div class="release-notes">
-            <h3>📋 Информация о релизах:</h3>
-            <ul>
-                <li><strong>🖥️ Десктоп:</strong> релиз v1.0.0 (EXE + БД)</li>
-                <li><strong>📱 Мобильное:</strong> релиз v1.0.3 (APK)</li>
-                <li>✅ Все приложения работают корректно</li>
-            </ul>
+            <div class="release-info">
+                📦 Релиз: v1.0.3 · <a href="https://github.com/dionbiktoros-tech/portfolio/releases/tag/v1.0.3" target="_blank" style="color: #0d47a1;">Перейти в релиз</a>
+            </div>
         </div>
 
         <hr>
