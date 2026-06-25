@@ -26,49 +26,24 @@
             border: 1px solid #fce4ec;
         }
         h1 {
-            font-size: 32px;
-            margin: 0 0 4px 0;
-            font-weight: 700;
-            letter-spacing: -0.5px;
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             color: #2d1b24;
         }
-        .tagline {
-            font-size: 17px;
+        .sub {
             color: #6c4a5a;
-            margin-bottom: 20px;
+            font-size: 16px;
+            margin-bottom: 28px;
             border-left: 4px solid #ff6b9d;
             padding-left: 14px;
             background: #fdf0f5;
             border-radius: 0 8px 8px 0;
-            line-height: 1.6;
+            line-height: 1.5;
             padding: 10px 16px;
-        }
-        .description {
-            background: #fdf0f5;
-            border-radius: 16px;
-            padding: 18px 20px;
-            margin-bottom: 24px;
-            border: 1px solid #fce4ec;
-            font-size: 15px;
-            line-height: 1.7;
-            color: #3d2a33;
-        }
-        .description strong {
-            color: #d44a7a;
-        }
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px 12px;
-            margin-top: 12px;
-        }
-        .features span {
-            background: #ffffff;
-            padding: 4px 14px;
-            border-radius: 30px;
-            font-size: 14px;
-            border: 1px solid #fce4ec;
-            color: #5a3a4a;
         }
         .version-block {
             background: #fdf6f8;
@@ -80,7 +55,7 @@
         .version-block:last-child {
             margin-bottom: 0;
         }
-        .version-block.pink {
+        .version-block.new {
             background: #fdf0f5;
             border-color: #f8d7e0;
         }
@@ -195,6 +170,33 @@
             color: #ff6b9d;
             min-width: 24px;
         }
+        .description {
+            background: #fdf0f5;
+            border-radius: 16px;
+            padding: 18px 20px;
+            margin-bottom: 24px;
+            border: 1px solid #fce4ec;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #3d2a33;
+        }
+        .description strong {
+            color: #d44a7a;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 12px;
+            margin-top: 12px;
+        }
+        .features span {
+            background: #ffffff;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 14px;
+            border: 1px solid #fce4ec;
+            color: #5a3a4a;
+        }
         @media (max-width: 480px) {
             .card { padding: 20px 16px; }
             h1 { font-size: 24px; }
@@ -206,7 +208,7 @@
 <div class="card">
 
     <h1>💄 Beauty Store</h1>
-    <div class="tagline">
+    <div class="sub">
         Мобильное приложение для покупки косметики<br>
         <span style="font-size:14px; color:#b08a9a;">Выберите версию и скачайте</span>
     </div>
@@ -223,9 +225,9 @@
         </div>
     </div>
 
-    <!-- ИНСТРУКЦИЯ -->
+    <!-- ИНСТРУКЦИЯ ПО СКАЧИВАНИЮ -->
     <div class="instruction">
-        <strong>📖 Как установить:</strong>
+        <strong>📖 Как скачать и установить:</strong>
         <div class="step">
             <span class="step-num">1.</span>
             <span>Нажмите на ссылку с нужным файлом ниже.</span>
@@ -236,7 +238,7 @@
         </div>
         <div class="step">
             <span class="step-num">3.</span>
-            <span><strong>Для ПК:</strong> запустите <strong>BeautyGarden.exe</strong>, БД подключается автоматически.</span>
+            <span><strong>Для ПК:</strong> скачайте EXE и БД, запустите <strong>BeautyGarden.exe</strong>.</span>
         </div>
         <div style="margin-top:8px; font-size:13px; color:#7a5a6a;">
             ⚙️ Требования: Android 6.0+ · Windows 7+
@@ -244,7 +246,7 @@
     </div>
 
     <!-- БЛОК: ANDROID -->
-    <div class="version-block pink">
+    <div class="version-block new">
         <h2>
             📱 Android (APK)
             <span class="badge green">Новая v1.0.8</span>
