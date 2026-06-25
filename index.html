@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beauty Store</title>
+    <title>💄 Beauty Store</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
@@ -16,12 +16,12 @@
             min-height: 100vh;
             color: #1c1c1e;
         }
-        .container {
-            max-width: 720px;
+        .card {
+            max-width: 640px;
             width: 100%;
             background: #ffffff;
-            border-radius: 20px;
-            padding: 30px 28px;
+            border-radius: 24px;
+            padding: 32px 28px;
             box-shadow: 0 8px 30px rgba(0,0,0,0.06);
             border: 1px solid #e5e5ea;
         }
@@ -30,50 +30,92 @@
             margin: 0 0 4px 0;
             font-weight: 700;
             letter-spacing: -0.5px;
-        }
-        .subhead {
-            font-size: 16px;
-            color: #3a3a3c;
-            margin-bottom: 24px;
-            padding-bottom: 16px;
-            border-bottom: 2px solid #f0f0f5;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 10px;
+        }
+        .tagline {
+            font-size: 18px;
+            font-weight: 400;
+            color: #3a3a3c;
+            margin-bottom: 6px;
+            border-left: 4px solid #ff6b9d;
+            padding-left: 14px;
+            background: #faf4f7;
+            border-radius: 0 8px 8px 0;
+            line-height: 1.5;
+        }
+        .description {
+            background: #f8f9fc;
+            border-radius: 16px;
+            padding: 18px 20px;
+            margin-bottom: 24px;
+            border: 1px solid #e9ecf0;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #2c3e50;
+        }
+        .description strong {
+            color: #1f2a3a;
+        }
+        .features {
+            display: flex;
             flex-wrap: wrap;
+            gap: 6px 16px;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #3a5a7a;
         }
-        .version-badge {
-            background: #007aff;
-            color: white;
-            font-size: 13px;
-            font-weight: 600;
-            padding: 4px 14px;
+        .features span {
+            background: #eef3f8;
+            padding: 2px 12px;
             border-radius: 30px;
-            letter-spacing: 0.3px;
         }
-        .version-badge.green {
-            background: #34c759;
-        }
-        .version-badge.gray {
-            background: #8e8e93;
-        }
-        .block {
-            background: #f8f8fc;
+        .version-block {
+            background: #f5f7fb;
             border-radius: 16px;
             padding: 20px 22px;
             margin-bottom: 24px;
-            border: 1px solid #e5e5ea;
+            border: 1px solid #e9ecf0;
+            transition: 0.15s;
         }
-        .block:last-child {
+        .version-block:last-child {
             margin-bottom: 0;
         }
-        .block h2 {
+        .version-block.new {
+            background: #f0f7fe;
+            border-color: #c5d9f0;
+        }
+        .version-block h2 {
             font-size: 20px;
-            margin: 0 0 8px 0;
+            margin: 0 0 6px 0;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
+        }
+        .badge {
+            font-size: 12px;
+            background: #2d7aff;
+            color: #fff;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        .badge.green {
+            background: #1b9e5e;
+        }
+        .badge.gray {
+            background: #8e8e93;
+        }
+        .meta {
+            font-size: 14px;
+            color: #5a6a7a;
+            margin: 4px 0 14px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
         }
         .file-list {
             display: flex;
@@ -84,156 +126,149 @@
         .file-link {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             background: white;
-            padding: 12px 16px;
+            padding: 10px 16px;
             border-radius: 12px;
-            border: 1px solid #e5e5ea;
+            border: 1px solid #e2e6ec;
             text-decoration: none;
-            color: #1c1c1e;
+            color: #1f2a3a;
             font-weight: 500;
             transition: 0.1s ease;
             font-size: 15px;
         }
         .file-link:hover {
-            background: #f0f7ff;
-            border-color: #007aff;
+            background: #f2f6ff;
+            border-color: #b8c8e8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         }
         .file-link .icon {
-            font-size: 22px;
-            width: 32px;
+            font-size: 20px;
+            width: 28px;
             text-align: center;
         }
         .file-link .size {
             margin-left: auto;
             font-weight: 400;
-            color: #6c6c70;
+            color: #6a7b8c;
             font-size: 13px;
-            background: #f0f0f5;
-            padding: 0 12px;
-            border-radius: 30px;
-            line-height: 26px;
+            background: #f0f2f5;
+            padding: 0 10px;
+            border-radius: 12px;
+            line-height: 24px;
         }
         .footnote {
             margin-top: 28px;
-            padding-top: 16px;
-            border-top: 1px solid #e5e5ea;
+            padding-top: 18px;
+            border-top: 1px solid #e9ecf0;
             font-size: 14px;
-            color: #6c6c70;
+            color: #5f6f80;
             text-align: center;
         }
         .footnote a {
-            color: #007aff;
+            color: #1f2a3a;
             text-decoration: none;
+            border-bottom: 1px dotted #b0bec5;
         }
         .footnote a:hover {
-            text-decoration: underline;
+            border-bottom: 1px solid #1f2a3a;
         }
         .instruction {
-            background: #f0f7ff;
-            border-left: 4px solid #007aff;
-            padding: 16px 20px;
+            background: #f9f9fc;
             border-radius: 12px;
+            padding: 14px 18px;
             margin-bottom: 24px;
-            font-size: 15px;
-            line-height: 1.6;
+            font-size: 14px;
+            line-height: 1.7;
+            border: 1px solid #e9ecf0;
+            color: #2c3e50;
         }
         .instruction strong {
-            color: #1c1c1e;
+            color: #1f2a3a;
         }
-        .instruction .step {
-            display: flex;
-            gap: 10px;
-            margin: 6px 0;
-        }
-        .instruction .step-num {
-            font-weight: 700;
-            color: #007aff;
-            min-width: 24px;
-        }
-        code {
-            background: #e5e5ea;
-            padding: 2px 8px;
-            border-radius: 6px;
-            font-size: 14px;
+        @media (max-width: 480px) {
+            .card { padding: 20px 16px; }
+            h1 { font-size: 24px; }
+            .file-link { font-size: 14px; padding: 10px 12px; }
         }
     </style>
 </head>
 <body>
-<div class="container">
+<div class="card">
 
     <h1>💄 Beauty Store</h1>
-    <div class="subhead">
-        <span>Мобильное приложение для покупки косметики</span>
-        <span class="version-badge">v1.0.1 – v1.0.6</span>
+    <div class="tagline">
+        Мобильное приложение для покупки косметики
+    </div>
+
+    <!-- ОПИСАНИЕ И ВОЗМОЖНОСТИ -->
+    <div class="description">
+        <strong>✨ О приложении</strong><br>
+        Beauty Store — это удобный каталог косметики у вас в телефоне. Ищите товары по категориям, добавляйте в корзину, оформляйте заказы и ставьте рейтинги.
+        <div class="features">
+            <span>⚙️ Каталог</span>
+            <span>🛒 Корзина</span>
+            <span>📂 Категории</span>
+            <span>⭐ Рейтинг</span>
+        </div>
+    </div>
+
+    <!-- БЛОК 1: ANDROID -->
+    <div class="version-block new">
+        <h2>
+            📱 Android (APK)
+            <span class="badge green">Последняя версия</span>
+        </h2>
+        <div class="meta">
+            <span>📦 ~5.7 МБ</span>
+            <span>🤖 Android 6.0+</span>
+            <span>📅 25 июня 2026</span>
+        </div>
+        <div class="file-list">
+            <a href="https://github.com/dionbiktoros-tech/portfolio/releases/latest/download/app-debug.apk" class="file-link">
+                <span class="icon">📲</span>
+                Скачать APK
+                <span class="size">Свежая версия</span>
+            </a>
+        </div>
+        <div style="margin-top:10px; font-size:14px; color:#2d7aff;">
+            ⚡ Прямая ссылка на последний APK
+        </div>
+    </div>
+
+    <!-- БЛОК 2: ПК + БД -->
+    <div class="version-block">
+        <h2>
+            🖥️ Для ПК + База данных
+            <span class="badge gray">Все версии</span>
+        </h2>
+        <div class="meta">
+            <span>💾 EXE + DB</span>
+            <span>📅 25 июня 2026</span>
+        </div>
+        <div class="file-list">
+            <a href="https://github.com/dionbiktoros-tech/portfolio/releases/latest/download/BeautyGarden.exe" class="file-link">
+                <span class="icon">🖥️</span>
+                Скачать EXE
+                <span class="size">~38 МБ</span>
+            </a>
+            <a href="https://github.com/dionbiktoros-tech/portfolio/releases/latest/download/beauty_shop.1.db" class="file-link">
+                <span class="icon">🗄️</span>
+                Скачать БД
+                <span class="size">~28 КБ</span>
+            </a>
+        </div>
+        <div style="margin-top:10px; font-size:14px; color:#6c7a8a;">
+            💡 Файлы из последнего релиза
+        </div>
     </div>
 
     <!-- ИНСТРУКЦИЯ -->
     <div class="instruction">
-        <strong>📖 Как скачать и установить:</strong>
-        <div class="step">
-            <span class="step-num">1.</span>
-            <span>Выберите нужную версию ниже (Android или ПК).</span>
-        </div>
-        <div class="step">
-            <span class="step-num">2.</span>
-            <span>Нажмите на ссылку с файлом — скачивание начнётся автоматически.</span>
-        </div>
-        <div class="step">
-            <span class="step-num">3.</span>
-            <span><strong>Для Android:</strong> откройте скачанный APK-файл на телефоне и разрешите установку из неизвестных источников.</span>
-        </div>
-        <div class="step">
-            <span class="step-num">4.</span>
-            <span><strong>Для ПК:</strong> запустите <code>BeautyGarden.exe</code> и следуйте инструкциям установщика. База данных (<code>.db</code>) используется приложением автоматически.</span>
-        </div>
-        <div style="margin-top:8px; font-size:14px; color:#3a3a3c;">
-            ⚙️ <strong>Требования:</strong> Android 6.0+ для APK, Windows 7+ для ПК-версии.
-        </div>
-    </div>
-
-    <!-- БЛОК: ANDROID (новая версия) -->
-    <div class="block">
-        <h2>
-            📱 Android (APK)
-            <span class="version-badge green">v1.0.6</span>
-        </h2>
-        <div style="font-size:14px; color:#3a3a3c; margin-bottom:12px;">
-            📦 5.7 МБ · 🤖 Android 6.0+ · 📅 24 июня 2026
-        </div>
-        <div class="file-list">
-            <a href="https://github.com/dionbiktoros-tech/portfolio/releases/download/v1.0.6/app-debug.apk" class="file-link">
-                <span class="icon">📲</span>
-                app-debug.apk
-                <span class="size">5.54 МБ</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- БЛОК: ПК + БД (старая версия) -->
-    <div class="block">
-        <h2>
-            🖥️ Для ПК + База данных
-            <span class="version-badge gray">v1.0.1</span>
-        </h2>
-        <div style="font-size:14px; color:#3a3a3c; margin-bottom:12px;">
-            💾 EXE + DB · 📅 24 июня 2026
-        </div>
-        <div class="file-list">
-            <a href="https://github.com/dionbiktoros-tech/portfolio/releases/download/v1.0.1/BeautyGarden.exe" class="file-link">
-                <span class="icon">🖥️</span>
-                BeautyGarden.exe
-                <span class="size">37.9 МБ</span>
-            </a>
-            <a href="https://github.com/dionbiktoros-tech/portfolio/releases/download/v1.0.1/beauty_shop.1.db" class="file-link">
-                <span class="icon">🗄️</span>
-                beauty_shop.1.db
-                <span class="size">28 КБ</span>
-            </a>
-        </div>
-        <div style="margin-top:10px; font-size:14px; color:#6c6c70; background:#f0f0f5; padding:8px 14px; border-radius:10px;">
-            ⚠️ Это более старая версия для ПК. Для Android используйте ссылку выше.
-        </div>
+        <strong>📖 Как установить:</strong><br>
+        • <strong>Android:</strong> скачайте APK, откройте на телефоне и разрешите установку.<br>
+        • <strong>ПК:</strong> скачайте EXE и БД, запустите установщик.<br>
+        • <strong>Требования:</strong> Android 6.0+, Windows 7+.
     </div>
 
     <!-- ПОДВАЛ -->
