@@ -1,302 +1,70 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💄 Beauty Store</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            background: #fdf6f8;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: #2d1b24;
-        }
-        .card {
-            max-width: 640px;
-            width: 100%;
-            background: #ffffff;
-            border-radius: 24px;
-            padding: 32px 28px;
-            box-shadow: 0 8px 30px rgba(255, 107, 157, 0.08);
-            border: 1px solid #fce4ec;
-        }
-        h1 {
-            font-size: 28px;
-            margin-top: 0;
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #2d1b24;
-        }
-        .sub {
-            color: #6c4a5a;
-            font-size: 16px;
-            margin-bottom: 28px;
-            border-left: 4px solid #ff6b9d;
-            padding-left: 14px;
-            background: #fdf0f5;
-            border-radius: 0 8px 8px 0;
-            line-height: 1.5;
-            padding: 10px 16px;
-        }
-        .version-block {
-            background: #fdf6f8;
-            border-radius: 16px;
-            padding: 20px 22px;
-            margin-bottom: 24px;
-            border: 1px solid #fce4ec;
-        }
-        .version-block:last-child {
-            margin-bottom: 0;
-        }
-        .version-block.new {
-            background: #fdf0f5;
-            border-color: #f8d7e0;
-        }
-        .version-block h2 {
-            font-size: 20px;
-            margin: 0 0 6px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            color: #2d1b24;
-        }
-        .badge {
-            font-size: 12px;
-            background: #ff6b9d;
-            color: #fff;
-            padding: 2px 14px;
-            border-radius: 20px;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-        }
-        .badge.green {
-            background: #d44a7a;
-        }
-        .badge.gray {
-            background: #b08a9a;
-        }
-        .meta {
-            font-size: 14px;
-            color: #7a5a6a;
-            margin: 4px 0 14px 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px 16px;
-        }
-        .file-list {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin: 12px 0 6px 0;
-        }
-        .file-link {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: white;
-            padding: 12px 16px;
-            border-radius: 12px;
-            border: 1px solid #fce4ec;
-            text-decoration: none;
-            color: #2d1b24;
-            font-weight: 500;
-            transition: 0.15s ease;
-            font-size: 15px;
-        }
-        .file-link:hover {
-            background: #fdf0f5;
-            border-color: #ff6b9d;
-            box-shadow: 0 2px 12px rgba(255, 107, 157, 0.1);
-        }
-        .file-link .icon {
-            font-size: 20px;
-            width: 28px;
-            text-align: center;
-        }
-        .file-link .size {
-            margin-left: auto;
-            font-weight: 400;
-            color: #8a6a7a;
-            font-size: 13px;
-            background: #fdf0f5;
-            padding: 0 12px;
-            border-radius: 12px;
-            line-height: 26px;
-        }
-        .footnote {
-            margin-top: 28px;
-            padding-top: 18px;
-            border-top: 2px solid #fce4ec;
-            font-size: 14px;
-            color: #8a6a7a;
-            text-align: center;
-        }
-        .footnote a {
-            color: #d44a7a;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .footnote a:hover {
-            text-decoration: underline;
-        }
-        .instruction {
-            background: #fdf0f5;
-            border-radius: 12px;
-            padding: 14px 18px;
-            margin-bottom: 24px;
-            font-size: 14px;
-            line-height: 1.8;
-            border: 1px solid #fce4ec;
-            color: #3d2a33;
-        }
-        .instruction strong {
-            color: #d44a7a;
-        }
-        .instruction .step {
-            display: flex;
-            gap: 10px;
-            margin: 4px 0;
-        }
-        .instruction .step-num {
-            font-weight: 700;
-            color: #ff6b9d;
-            min-width: 24px;
-        }
-        .description {
-            background: #fdf0f5;
-            border-radius: 16px;
-            padding: 18px 20px;
-            margin-bottom: 24px;
-            border: 1px solid #fce4ec;
-            font-size: 15px;
-            line-height: 1.7;
-            color: #3d2a33;
-        }
-        .description strong {
-            color: #d44a7a;
-        }
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px 12px;
-            margin-top: 12px;
-        }
-        .features span {
-            background: #ffffff;
-            padding: 4px 14px;
-            border-radius: 30px;
-            font-size: 14px;
-            border: 1px solid #fce4ec;
-            color: #5a3a4a;
-        }
-        @media (max-width: 480px) {
-            .card { padding: 20px 16px; }
-            h1 { font-size: 24px; }
-            .file-link { font-size: 14px; padding: 10px 12px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Портфолио Иванова Аркадия</title>
+<style>
+body{font-family:Segoe UI,sans-serif;background:linear-gradient(135deg,#fce4ec,#f8bbd0);margin:0;padding:20px}
+.container{max-width:900px;margin:auto;background:#fff;padding:40px;border-radius:20px;box-shadow:0 8px 40px rgba(0,0,0,.15)}
+h1,h2{text-align:center;color:#d81b60}
+.subtitle{text-align:center;color:#7b4f8c}
+.card{background:#fce4ec;padding:25px;border-radius:15px;margin:20px 0}
+.btn{display:inline-block;padding:12px 24px;margin:6px;border-radius:10px;color:#fff;text-decoration:none;font-weight:bold}
+.red{background:#d81b60}.purple{background:#6a1b9a}.gray{background:#7b4f8c}
+ol{line-height:1.8}
+footer{text-align:center;margin-top:30px;color:#7b4f8c}
+</style>
 </head>
 <body>
+<div class="container">
+<h1>👨‍💻 Портфолио Иванова Аркадия</h1>
+<p class="subtitle">Студент группы Гр-ИС-944 • Учебные проекты на Python и Android</p>
+
+<h2>🌸 Beauty Store Desktop</h2>
 <div class="card">
+<p>Настольное приложение для автоматизации магазина косметики с использованием Python и SQLite.</p>
+<p><b>Версия:</b> v1.0</p>
+<a class="btn red" href="https://github.com/dionbiktoros-tech/portfolio/releases/download/v1.0/prilo.exe">⬇ Скачать EXE</a>
+<a class="btn gray" href="https://github.com/dionbiktoros-tech/portfolio/releases/download/v1.0/beauty_shop.db">⬇ Скачать БД</a>
 
-    <h1>💄 Beauty Store</h1>
-    <div class="sub">
-        Мобильное приложение для покупки косметики<br>
-        <span style="font-size:14px; color:#b08a9a;">Выберите версию и скачайте</span>
-    </div>
+<h3>Инструкция по установке</h3>
+<ol>
+<li>Скачайте <b>prilo.exe</b>.</li>
+<li>Скачайте <b>beauty_shop.db</b>.</li>
+<li>Поместите оба файла в одну папку.</li>
+<li>Запустите <b>prilo.exe</b>.</li>
+</ol>
+</div>
 
-    <!-- ОПИСАНИЕ -->
-    <div class="description">
-        <strong>✨ О приложении</strong><br>
-        Beauty Store — это удобный каталог косметики. Ищите товары по категориям, добавляйте в корзину, оформляйте заказы и ставьте рейтинги.
-        <div class="features">
-            <span>⚙️ Каталог</span>
-            <span>🛒 Корзина</span>
-            <span>📂 Категории</span>
-            <span>⭐ Рейтинг</span>
-        </div>
-    </div>
+<h2>📱 Beauty Store Mobile</h2>
+<div class="card">
+<p>Мобильная версия приложения для Android.</p>
+<a class="btn purple" href="https://github.com/dionbiktoros-tech/portfolio/releases/download/v1.0/app-debug.3.apk">⬇ Скачать APK</a>
 
-    <!-- ИНСТРУКЦИЯ ПО СКАЧИВАНИЮ -->
-    <div class="instruction">
-        <strong>📖 Как скачать и установить:</strong>
-        <div class="step">
-            <span class="step-num">1.</span>
-            <span>Нажмите на ссылку с нужным файлом ниже.</span>
-        </div>
-        <div class="step">
-            <span class="step-num">2.</span>
-            <span><strong>Для Android:</strong> откройте APK на телефоне, разрешите установку.</span>
-        </div>
-        <div class="step">
-            <span class="step-num">3.</span>
-            <span><strong>Для ПК:</strong> скачайте EXE и БД, запустите <strong>BeautyGarden.exe</strong>.</span>
-        </div>
-        <div style="margin-top:8px; font-size:13px; color:#7a5a6a;">
-            ⚙️ Требования: Android 6.0+ · Windows 7+
-        </div>
-    </div>
+<h3>Инструкция</h3>
+<ol>
+<li>Скачайте APK.</li>
+<li>Разрешите установку из неизвестных источников.</li>
+<li>Установите приложение.</li>
+<li>Запустите Beauty Store.</li>
+</ol>
+</div>
 
-    <!-- БЛОК: ANDROID -->
-    <div class="version-block new">
-        <h2>
-            📱 Android (APK)
-            <span class="badge green">Новая v1.0.8</span>
-        </h2>
-        <div class="meta">
-            <span>📦 ~5.7 МБ</span>
-            <span>🤖 Android 6.0+</span>
-            <span>📅 25 июня 2026</span>
-        </div>
-        <div class="file-list">
-            <a href="https://github.com/dionbiktoros-tech/portfolio/releases" class="file-link">
-                <span class="icon">📲</span>
-                Скачать APK (все версии)
-                <span class="size">На GitHub</span>
-            </a>
-        </div>
-        <div style="margin-top:10px; font-size:14px; color:#d44a7a;">
-            ⚡ Перейдите на страницу релизов и скачайте APK
-        </div>
-    </div>
+<h2>📦 GitHub Releases</h2>
+<div class="card">
+<p>Все актуальные версии доступны в GitHub Releases:</p>
+<p><a href="https://github.com/dionbiktoros-tech/portfolio/releases/tag/v1.0">Открыть релиз v1.0</a></p>
+</div>
 
-    <!-- БЛОК: ПК + БД -->
-    <div class="version-block">
-        <h2>
-            🖥️ Для ПК + База данных
-            <span class="badge gray">Все версии</span>
-        </h2>
-        <div class="meta">
-            <span>💾 EXE + DB</span>
-            <span>📅 25 июня 2026</span>
-        </div>
-        <div class="file-list">
-            <a href="https://github.com/dionbiktoros-tech/portfolio/releases" class="file-link">
-                <span class="icon">🖥️</span>
-                Скачать EXE + DB
-                <span class="size">На GitHub</span>
-            </a>
-        </div>
-        <div style="margin-top:10px; font-size:14px; color:#8a6a7a;">
-            💡 Все файлы на странице релизов
-        </div>
-    </div>
+<h2>📬 Контакты</h2>
+<div class="card">
+<p><b>Разработчик:</b> Иванов Аркадий</p>
+<p><b>Email:</b> arkady@beautygarden.com</p>
+<p><b>Telegram:</b> @arkady_dev</p>
+</div>
 
-    <!-- ПОДВАЛ -->
-    <div class="footnote">
-        <span>📌 Все версии и исходный код на </span>
-        <a href="https://github.com/dionbiktoros-tech/portfolio/releases" target="_blank">GitHub Releases</a>
-        <span style="display:inline-block; margin-left:12px;">© 2026 Иванов Аркадий</span>
-    </div>
-
+<footer>© 2026 Иванов Аркадий. Все права защищены.</footer>
 </div>
 </body>
 </html>
